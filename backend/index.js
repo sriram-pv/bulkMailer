@@ -58,7 +58,7 @@ app.post('/sendmail', function (req, res) {
     });
 
   }).catch(function (error) {
-    console.log(error);
+    console.log("error",error);
   });
 });
 
