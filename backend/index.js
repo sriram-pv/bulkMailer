@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 
 app.use(cors({
-  origin: 'https://bulk-mailer-frontend-mu.vercel.app', // Replace with your frontend URL
+  origin: 'https://bulk-mailer-frontend-omega.vercel.app', // Replace with your frontend URL
   methods: ['GET', 'POST'], // Allow both GET and POST methods
   allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
 }));
