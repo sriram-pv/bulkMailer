@@ -23,7 +23,8 @@ mongoose.connect('mongodb+srv://sriram:123@cluster0.9vvnu.mongodb.net/passkey?re
 });
 
 const credentials = mongoose.model('credentials', {}, 'bulkmail');
-
+app.get('/',function(req,res){
+  res.json("hello");})
 app.post('/sendmail', function (req, res) {
   var msg = req.body.msg;
   var emailList = req.body.emailList;
