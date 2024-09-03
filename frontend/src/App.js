@@ -35,7 +35,7 @@ setemailList(totalemail)
   function send()
   {
     setstatus(true)
-axios.post('https://bulk-mailer-backend.vercel.app/',{msg:msg,emailList:emailList})
+axios.post('https://bulk-mailer-backend.vercel.app',{msg:msg,emailList:emailList})
 .then(function(data)
 {
   if(data.data === true)
