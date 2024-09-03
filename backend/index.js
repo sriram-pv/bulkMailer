@@ -7,7 +7,8 @@ const app = express();
 app.use(cors({
   origin: 'https://bulk-mailer-frontend-omega.vercel.app', // Replace with your frontend URL
   methods: ['GET', 'POST'], // Allow both GET and POST methods
-  allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
+  // allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
+  credentials:true
 }));
 
 app.use(express.json());
