@@ -26,6 +26,7 @@ app.get('/',function(req,res){
 })
 
 app.post('/sendmail', function (req, res) {
+  try{
   var msg = req.body.msg;
   var emailList = req.body.emailList;
 
@@ -62,6 +63,10 @@ app.post('/sendmail', function (req, res) {
   }).catch(function (error) {
     console.log("error",error);
   });
+  }
+  catch(error){
+    res.send(error)
+  }
 });
 
 app.listen(5000, () => {
