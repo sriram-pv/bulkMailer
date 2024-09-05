@@ -8,7 +8,7 @@ app.use(cors());
 
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://sriram:123@cluster0.9vvnu.mongodb.net/passkey?retryWrites=true&w=majority&appName=Cluster0', {}).then(() => {
+mongoose.connect('mongodb+srv://sriram:123@cluster0.9vvnu.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {}).then(() => {
   console.log('Connected to DB');
 }).catch((error) => {
   console.log('Failed to connect to DB', error);
