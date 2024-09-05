@@ -4,27 +4,18 @@ const nodemailer = require("nodemailer");
 const mongoose = require('mongoose');
 const app = express();
 
-app.use(cors({
-  origin: 'https://bulk-mailer-frontend-omega.vercel.app', // Replace with your frontend URL
-  methods: ['GET', 'POST'], // Allow both GET and POST methods
-  // allowedHeaders: ['Content-Type', 'Authorization'] // Allow specific headers
-  credentials:true
-}));
+app.use(cors());
 
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://sriram:123@cluster0.9vvnu.mongodb.net/passkey?retryWrites=true&w=majority&appName=Cluster0', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
+mongoose.connect('mongodb+srv://sriram:123@cluster0.9vvnu.mongodb.net/passkey?retryWrites=true&w=majority&appName=Cluster0', {}).then(() => {
   console.log('Connected to DB');
 }).catch((error) => {
   console.log('Failed to connect to DB', error);
 });
 
 const credentials = mongoose.model('credentials', {}, 'bulkmail');
-app.get('/',function(req,res){
-  res.json("hello");})
+
 app.post('/sendmail', function (req, res) {
   var msg = req.body.msg;
   var emailList = req.body.emailList;
