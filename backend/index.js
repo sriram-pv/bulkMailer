@@ -4,7 +4,11 @@ const nodemailer = require("nodemailer");
 const mongoose = require('mongoose');
 const app = express();
 
-app.use(cors({origin:"https://bulkmailer-frontend.onrender.com"}));
+app.use(cors({
+  origin: "https://bulkmailer-frontend.onrender.com",
+  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
+  allowedHeaders: "Content-Type, Authorization"
+}));
 
 app.use(express.json());
 
