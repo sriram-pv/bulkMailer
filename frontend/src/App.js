@@ -35,7 +35,7 @@ setemailList(totalemail)
   function send()
   {
     setstatus(true)
-axios.post('https://bulkmailer-backend-go63.onrender.com',{msg:msg,emailList:emailList})
+axios.post('https://bulkmailer-backend-go63.onrender.com/sendmail',{msg:msg,emailList:emailList})
 .then(function(data)
 {
   if(data.data === true)
