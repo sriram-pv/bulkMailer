@@ -20,8 +20,10 @@ mongoose.connect('mongodb+srv://sriram:123@cluster0.9vvnu.mongodb.net/?retryWrit
 
 const credentials = mongoose.model('credentials', {}, 'bulkmail');
 
-// app.get('/',function(req,res){
-//   console.log('hello')})
+
+app.get('/',function(req,res){
+  res.send('success')
+})
 
 app.post('/sendmail', function (req, res) {
   var msg = req.body.msg;
