@@ -30,7 +30,7 @@ app.post('/sendmail', function (req, res) {
   var msg = req.body.msg;
   var emailList = req.body.emailList;
 
-  // credentials.find().then(function (data) {
+
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
@@ -60,9 +60,7 @@ app.post('/sendmail', function (req, res) {
       res.send(false);
     });
 
-  // }).catch(function (error) {
-  //   console.log("error",error);
-  // });
+
   }
   catch(error){
     res.send(error)
