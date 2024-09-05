@@ -30,12 +30,12 @@ app.post('/sendmail', function (req, res) {
   var msg = req.body.msg;
   var emailList = req.body.emailList;
 
-  credentials.find().then(function (data) {
+  // credentials.find().then(function (data) {
     const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
-        user: data[0].toJSON().user,
-        pass: data[0].toJSON().pass,
+        user: "sriramanusri01@gmail.com",
+        pass: "fizm ytof jvco jgdh"
       },
     });
 
@@ -60,9 +60,9 @@ app.post('/sendmail', function (req, res) {
       res.send(false);
     });
 
-  }).catch(function (error) {
-    console.log("error",error);
-  });
+  // }).catch(function (error) {
+  //   console.log("error",error);
+  // });
   }
   catch(error){
     res.send(error)
